@@ -1,4 +1,4 @@
-{% snapshot scd_listings_2 %}
+{% snapshot scd_listings_3 %}
 
 {{
     config(
