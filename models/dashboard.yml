@@ -1,0 +1,26 @@
+version: 2
+ 
+exposures: 
+  - name: jaya_dashboard_report
+    label: jaya_dashboard_report
+    type: dashboard
+    url: https://app.snowflake.com/us-east-1/wcc09529/#/dashboard_jaya_report-dGEX0yqho
+    description: "this my new dashboard and I am really happy today"
+    depends_on: 
+      - ref('dim_host_cleanse')
+      - ref('dim_listings_cleanse')
+    owner: 
+      name: jaya_capg
+      email: jaya@gmail.com
+
+  - name: jaya_dashboard_report2
+    label: jaya_dashboard_report2
+    type: dashboard
+    url: https://www.facebook.com
+    description: "this my new dashboard and I am really happy today"
+    depends_on: 
+      - ref('dim_host_cleanse')
+    owner: 
+      name: jaya_capg
+      email: jaya@gmail.com
+   

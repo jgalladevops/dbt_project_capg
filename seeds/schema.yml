@@ -1,0 +1,21 @@
+version: 2
+seeds:
+  - name: currency
+    description: "Awesome day"
+    config:
+      quote_columns: true
+      delimited: ","
+      column_types:
+        c_id: varchar(250)
+        abc_name: varchar(301)
+        country: varchar(420)
+   
+  - name: new_file
+    description: "Awesome day"
+    config:
+      quote_columns: true
+      delimited: "\t"
+      column_types:
+        c_id: varchar(250)
+        abc_name: varchar(301)
+        country: varchar(420)  

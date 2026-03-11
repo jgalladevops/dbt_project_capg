@@ -1,0 +1,34 @@
+version: 2
+models:
+  - name: src_host
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal:
+          value: 14110
+    description: "This is model refers data from host table"
+    columns:
+      - name: host_id
+        datatype: varchar(255)
+        description: "first column of this model"
+        constraints:
+          - type: primary_key
+        tests:
+          - not_null
+          - unique
+          - jaya_not_null
+          - dbt_expectations.expect_column_max_to_be_between:
+              min_value: 2164
+              max_value: 427748367 
+
+          - relationships:
+              arguments:
+                to: ref('src_listings')
+                field: listing_id
+      - name: host_name
+        datatype: varchar(255)
+        description: "This is the second column of this model"
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property.
+                values: ['Ion', 'Britta']

@@ -1,0 +1,31 @@
+
+
+version: 2
+ 
+sources:
+  - name: RAW_SOURCE_LAYER
+    database: RAW_DATA_DB
+    schema: RAW_DATA_SCHEMA
+    tables:
+      - name: HOSTS
+        identifier: RAW_HOSTS
+        loaded_at_field: UPDATED_AT
+        freshness:
+          warn_after: {count: 30, period: minute}
+          error_after: {count: 60 , period: minute}
+ 
+ 
+      - name: LISTINGS
+        identifier: RAW_LISTINGS
+        loaded_at_field: CREATED_AT
+        freshness:
+          warn_after: {count: 1, period: hour}
+          error_after: {count: 24 , period: hour}
+ 
+ 
+      - name: REVIEWS
+        identifier: RAW_REVIEWS
+        loaded_at_field: DATE
+        freshness:
+          warn_after: {count: 1, period: hour}
+          error_after: {count: 24 , period: hour}

@@ -1,0 +1,19 @@
+
+version: 2
+
+models:
+   - name: dim_host_cleanse
+     description: "This is model refers data from host table"
+     columns:
+       - name: host_id
+         datatype: varchar(255)
+         description: "{{ doc('host_id') }}"
+         constraints:
+            - type: primary_key
+         tests:
+            - not_null
+            - unique
+
+       - name: host_name
+         datatype: varchar(255)
+         description: "{{ doc('host_name') }}"        
